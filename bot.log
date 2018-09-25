@@ -1,0 +1,1505 @@
+telegram.ext.updater - INFO - Received signal 2 (SIGINT), stopping...
+telegram.ext.updater - WARNING - Exiting immediately!
+telegram.ext.updater - ERROR - Error while getting Updates: urllib3 HTTPError ('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))
+telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 617, in urlopen
+    chunked=chunked)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 402, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 398, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\ProgramData\Anaconda3\lib\http\client.py", line 1331, in getresponse
+    response.begin()
+  File "C:\ProgramData\Anaconda3\lib\http\client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "C:\ProgramData\Anaconda3\lib\http\client.py", line 258, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 586, in readinto
+    return self._sock.recv_into(b)
+  File "C:\ProgramData\Anaconda3\lib\ssl.py", line 1009, in recv_into
+    return self.read(nbytes, buffer)
+  File "C:\ProgramData\Anaconda3\lib\ssl.py", line 871, in read
+    return self._sslobj.read(len, buffer)
+  File "C:\ProgramData\Anaconda3\lib\ssl.py", line 631, in read
+    v = self._sslobj.read(len, buffer)
+ConnectionResetError: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 203, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 70, in request
+    **urlopen_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 666, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 347, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\packages\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 617, in urlopen
+    chunked=chunked)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 402, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 398, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\ProgramData\Anaconda3\lib\http\client.py", line 1331, in getresponse
+    response.begin()
+  File "C:\ProgramData\Anaconda3\lib\http\client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "C:\ProgramData\Anaconda3\lib\http\client.py", line 258, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 586, in readinto
+    return self._sock.recv_into(b)
+  File "C:\ProgramData\Anaconda3\lib\ssl.py", line 1009, in recv_into
+    return self.read(nbytes, buffer)
+  File "C:\ProgramData\Anaconda3\lib\ssl.py", line 871, in read
+    return self._sslobj.read(len, buffer)
+  File "C:\ProgramData\Anaconda3\lib\ssl.py", line 631, in read
+    v = self._sslobj.read(len, buffer)
+telegram.vendor.ptb_urllib3.urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 319, in _network_loop_retry
+    if not action_cb():
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 280, in polling_action_cb
+    allowed_updates=allowed_updates)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 65, in decorator
+    result = func(self, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 1975, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 309, in post
+    headers={'Content-Type': 'application/json'})
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 209, in _request_wrapper
+    raise NetworkError('urllib3 HTTPError {0}'.format(error))
+telegram.error.NetworkError: urllib3 HTTPError ('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA399E4E0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA39CA2E8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA39CA470>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.ext.updater - ERROR - Error while getting Updates: urllib3 HTTPError SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA399E518>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\contrib\socks.py", line 88, in _new_conn
+    **extra_kw
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 233, in create_connection
+    for r in socket.getaddrinfo(proxy_addr, proxy_port, 0, socket.SOCK_STREAM):
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 617, in urlopen
+    chunked=chunked)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 360, in _make_request
+    self._validate_conn(conn)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 857, in _validate_conn
+    super(HTTPSConnectionPool, self)._validate_conn(conn)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 289, in _validate_conn
+    conn.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\contrib\socks.py", line 120, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+telegram.vendor.ptb_urllib3.urllib3.exceptions.NewConnectionError: <telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA399E518>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 203, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 70, in request
+    **urlopen_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 666, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 376, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+telegram.vendor.ptb_urllib3.urllib3.exceptions.MaxRetryError: SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA399E518>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 319, in _network_loop_retry
+    if not action_cb():
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 280, in polling_action_cb
+    allowed_updates=allowed_updates)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 65, in decorator
+    result = func(self, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 1975, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 309, in post
+    headers={'Content-Type': 'application/json'})
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 209, in _request_wrapper
+    raise NetworkError('urllib3 HTTPError {0}'.format(error))
+telegram.error.NetworkError: urllib3 HTTPError SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA399E518>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA39DACC0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA39DADD8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA5306198>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.ext.updater - ERROR - Error while getting Updates: urllib3 HTTPError SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA5306278>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\contrib\socks.py", line 88, in _new_conn
+    **extra_kw
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 233, in create_connection
+    for r in socket.getaddrinfo(proxy_addr, proxy_port, 0, socket.SOCK_STREAM):
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 617, in urlopen
+    chunked=chunked)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 360, in _make_request
+    self._validate_conn(conn)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 857, in _validate_conn
+    super(HTTPSConnectionPool, self)._validate_conn(conn)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 289, in _validate_conn
+    conn.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\contrib\socks.py", line 120, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+telegram.vendor.ptb_urllib3.urllib3.exceptions.NewConnectionError: <telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA5306278>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 203, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 70, in request
+    **urlopen_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 666, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 376, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+telegram.vendor.ptb_urllib3.urllib3.exceptions.MaxRetryError: SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA5306278>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 319, in _network_loop_retry
+    if not action_cb():
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 280, in polling_action_cb
+    allowed_updates=allowed_updates)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 65, in decorator
+    result = func(self, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 1975, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 309, in post
+    headers={'Content-Type': 'application/json'})
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 209, in _request_wrapper
+    raise NetworkError('urllib3 HTTPError {0}'.format(error))
+telegram.error.NetworkError: urllib3 HTTPError SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA5306278>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA5306208>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA53064A8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA5306550>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.ext.updater - ERROR - Error while getting Updates: urllib3 HTTPError SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA5306630>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\contrib\socks.py", line 88, in _new_conn
+    **extra_kw
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 233, in create_connection
+    for r in socket.getaddrinfo(proxy_addr, proxy_port, 0, socket.SOCK_STREAM):
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 617, in urlopen
+    chunked=chunked)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 360, in _make_request
+    self._validate_conn(conn)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 857, in _validate_conn
+    super(HTTPSConnectionPool, self)._validate_conn(conn)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 289, in _validate_conn
+    conn.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\contrib\socks.py", line 120, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+telegram.vendor.ptb_urllib3.urllib3.exceptions.NewConnectionError: <telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA5306630>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 203, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 70, in request
+    **urlopen_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 666, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 376, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+telegram.vendor.ptb_urllib3.urllib3.exceptions.MaxRetryError: SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA5306630>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 319, in _network_loop_retry
+    if not action_cb():
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 280, in polling_action_cb
+    allowed_updates=allowed_updates)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 65, in decorator
+    result = func(self, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 1975, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 309, in post
+    headers={'Content-Type': 'application/json'})
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 209, in _request_wrapper
+    raise NetworkError('urllib3 HTTPError {0}'.format(error))
+telegram.error.NetworkError: urllib3 HTTPError SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA5306630>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+telegram.ext.updater - ERROR - Error while getting Updates: urllib3 HTTPError ('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))
+telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 617, in urlopen
+    chunked=chunked)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 360, in _make_request
+    self._validate_conn(conn)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 857, in _validate_conn
+    super(HTTPSConnectionPool, self)._validate_conn(conn)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 289, in _validate_conn
+    conn.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 326, in connect
+    ssl_context=context)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\ssl_.py", line 324, in ssl_wrap_socket
+    return context.wrap_socket(sock, server_hostname=server_hostname)
+  File "C:\ProgramData\Anaconda3\lib\ssl.py", line 407, in wrap_socket
+    _context=self, _session=session)
+  File "C:\ProgramData\Anaconda3\lib\ssl.py", line 814, in __init__
+    self.do_handshake()
+  File "C:\ProgramData\Anaconda3\lib\ssl.py", line 1068, in do_handshake
+    self._sslobj.do_handshake()
+  File "C:\ProgramData\Anaconda3\lib\ssl.py", line 689, in do_handshake
+    self._sslobj.do_handshake()
+ConnectionResetError: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 203, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 70, in request
+    **urlopen_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 666, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 347, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\packages\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 617, in urlopen
+    chunked=chunked)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 360, in _make_request
+    self._validate_conn(conn)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 857, in _validate_conn
+    super(HTTPSConnectionPool, self)._validate_conn(conn)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 289, in _validate_conn
+    conn.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 326, in connect
+    ssl_context=context)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\ssl_.py", line 324, in ssl_wrap_socket
+    return context.wrap_socket(sock, server_hostname=server_hostname)
+  File "C:\ProgramData\Anaconda3\lib\ssl.py", line 407, in wrap_socket
+    _context=self, _session=session)
+  File "C:\ProgramData\Anaconda3\lib\ssl.py", line 814, in __init__
+    self.do_handshake()
+  File "C:\ProgramData\Anaconda3\lib\ssl.py", line 1068, in do_handshake
+    self._sslobj.do_handshake()
+  File "C:\ProgramData\Anaconda3\lib\ssl.py", line 689, in do_handshake
+    self._sslobj.do_handshake()
+telegram.vendor.ptb_urllib3.urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 319, in _network_loop_retry
+    if not action_cb():
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 280, in polling_action_cb
+    allowed_updates=allowed_updates)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 65, in decorator
+    result = func(self, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 1975, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 309, in post
+    headers={'Content-Type': 'application/json'})
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 209, in _request_wrapper
+    raise NetworkError('urllib3 HTTPError {0}'.format(error))
+telegram.error.NetworkError: urllib3 HTTPError ('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))
+telegram.ext.updater - ERROR - Error while getting Updates: Bad Gateway
+telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 319, in _network_loop_retry
+    if not action_cb():
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 280, in polling_action_cb
+    allowed_updates=allowed_updates)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 65, in decorator
+    result = func(self, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 1975, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 309, in post
+    headers={'Content-Type': 'application/json'})
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 231, in _request_wrapper
+    raise NetworkError('Bad Gateway')
+telegram.error.NetworkError: Bad Gateway
+telegram.ext.updater - ERROR - Error while getting Updates: Bad Gateway
+telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 319, in _network_loop_retry
+    if not action_cb():
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 280, in polling_action_cb
+    allowed_updates=allowed_updates)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 65, in decorator
+    result = func(self, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 1975, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 309, in post
+    headers={'Content-Type': 'application/json'})
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 231, in _request_wrapper
+    raise NetworkError('Bad Gateway')
+telegram.error.NetworkError: Bad Gateway
+telegram.ext.updater - ERROR - Error while getting Updates: urllib3 HTTPError ('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))
+telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 617, in urlopen
+    chunked=chunked)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 402, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 398, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\ProgramData\Anaconda3\lib\http\client.py", line 1331, in getresponse
+    response.begin()
+  File "C:\ProgramData\Anaconda3\lib\http\client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "C:\ProgramData\Anaconda3\lib\http\client.py", line 258, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 586, in readinto
+    return self._sock.recv_into(b)
+  File "C:\ProgramData\Anaconda3\lib\ssl.py", line 1009, in recv_into
+    return self.read(nbytes, buffer)
+  File "C:\ProgramData\Anaconda3\lib\ssl.py", line 871, in read
+    return self._sslobj.read(len, buffer)
+  File "C:\ProgramData\Anaconda3\lib\ssl.py", line 631, in read
+    v = self._sslobj.read(len, buffer)
+ConnectionResetError: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 203, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 70, in request
+    **urlopen_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 666, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 347, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\packages\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 617, in urlopen
+    chunked=chunked)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 402, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 398, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\ProgramData\Anaconda3\lib\http\client.py", line 1331, in getresponse
+    response.begin()
+  File "C:\ProgramData\Anaconda3\lib\http\client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "C:\ProgramData\Anaconda3\lib\http\client.py", line 258, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 586, in readinto
+    return self._sock.recv_into(b)
+  File "C:\ProgramData\Anaconda3\lib\ssl.py", line 1009, in recv_into
+    return self.read(nbytes, buffer)
+  File "C:\ProgramData\Anaconda3\lib\ssl.py", line 871, in read
+    return self._sslobj.read(len, buffer)
+  File "C:\ProgramData\Anaconda3\lib\ssl.py", line 631, in read
+    v = self._sslobj.read(len, buffer)
+telegram.vendor.ptb_urllib3.urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 319, in _network_loop_retry
+    if not action_cb():
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 280, in polling_action_cb
+    allowed_updates=allowed_updates)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 65, in decorator
+    result = func(self, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 1975, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 309, in post
+    headers={'Content-Type': 'application/json'})
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 209, in _request_wrapper
+    raise NetworkError('urllib3 HTTPError {0}'.format(error))
+telegram.error.NetworkError: urllib3 HTTPError ('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA39DA080>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA531DDA0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA5306F28>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA39CACF8>: Failed to establish a new connection: [Errno 11004] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA39CADD8>: Failed to establish a new connection: [Errno 11004] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.ext.updater - ERROR - Error while getting Updates: urllib3 HTTPError SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA39CA898>: Failed to establish a new connection: [Errno 11004] getaddrinfo failed',))
+telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 851, in connect
+    negotiate(self, dest_addr, dest_port)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 497, in _negotiate_SOCKS5
+    self, CONNECT, dest_addr)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 565, in _SOCKS5_request
+    resolved = self._write_SOCKS5_address(dst, writer)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 621, in _write_SOCKS5_address
+    socket.AI_ADDRCONFIG)
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11004] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\contrib\socks.py", line 88, in _new_conn
+    **extra_kw
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 262, in create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 252, in create_connection
+    sock.connect((remote_host, remote_port))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 100, in wrapper
+    return function(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 855, in connect
+    raise GeneralProxyError("Socket error", error)
+socks.GeneralProxyError: Socket error: [Errno 11004] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 617, in urlopen
+    chunked=chunked)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 360, in _make_request
+    self._validate_conn(conn)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 857, in _validate_conn
+    super(HTTPSConnectionPool, self)._validate_conn(conn)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 289, in _validate_conn
+    conn.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\contrib\socks.py", line 110, in _new_conn
+    "Failed to establish a new connection: %s" % error
+telegram.vendor.ptb_urllib3.urllib3.exceptions.NewConnectionError: <telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA39CA898>: Failed to establish a new connection: [Errno 11004] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 203, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 70, in request
+    **urlopen_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 666, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 376, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+telegram.vendor.ptb_urllib3.urllib3.exceptions.MaxRetryError: SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA39CA898>: Failed to establish a new connection: [Errno 11004] getaddrinfo failed',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 319, in _network_loop_retry
+    if not action_cb():
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 280, in polling_action_cb
+    allowed_updates=allowed_updates)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 65, in decorator
+    result = func(self, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 1975, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 309, in post
+    headers={'Content-Type': 'application/json'})
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 209, in _request_wrapper
+    raise NetworkError('urllib3 HTTPError {0}'.format(error))
+telegram.error.NetworkError: urllib3 HTTPError SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA39CA898>: Failed to establish a new connection: [Errno 11004] getaddrinfo failed',))
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA399EAC8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA399EB38>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA399E080>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA5306A58>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA39DA9B0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA39DA0F0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.ext.updater - ERROR - Error while getting Updates: urllib3 HTTPError SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA39DA898>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 851, in connect
+    negotiate(self, dest_addr, dest_port)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 497, in _negotiate_SOCKS5
+    self, CONNECT, dest_addr)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 565, in _SOCKS5_request
+    resolved = self._write_SOCKS5_address(dst, writer)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 621, in _write_SOCKS5_address
+    socket.AI_ADDRCONFIG)
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\contrib\socks.py", line 88, in _new_conn
+    **extra_kw
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 262, in create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 252, in create_connection
+    sock.connect((remote_host, remote_port))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 100, in wrapper
+    return function(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 855, in connect
+    raise GeneralProxyError("Socket error", error)
+socks.GeneralProxyError: Socket error: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 617, in urlopen
+    chunked=chunked)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 360, in _make_request
+    self._validate_conn(conn)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 857, in _validate_conn
+    super(HTTPSConnectionPool, self)._validate_conn(conn)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 289, in _validate_conn
+    conn.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\contrib\socks.py", line 110, in _new_conn
+    "Failed to establish a new connection: %s" % error
+telegram.vendor.ptb_urllib3.urllib3.exceptions.NewConnectionError: <telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA39DA898>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 203, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 70, in request
+    **urlopen_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 666, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 376, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+telegram.vendor.ptb_urllib3.urllib3.exceptions.MaxRetryError: SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA39DA898>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 319, in _network_loop_retry
+    if not action_cb():
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 280, in polling_action_cb
+    allowed_updates=allowed_updates)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 65, in decorator
+    result = func(self, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 1975, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 309, in post
+    headers={'Content-Type': 'application/json'})
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 209, in _request_wrapper
+    raise NetworkError('urllib3 HTTPError {0}'.format(error))
+telegram.error.NetworkError: urllib3 HTTPError SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA39DA898>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA5499F98>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA5499860>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA5499EB8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.ext.updater - ERROR - Error while getting Updates: urllib3 HTTPError SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA5499EF0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 851, in connect
+    negotiate(self, dest_addr, dest_port)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 497, in _negotiate_SOCKS5
+    self, CONNECT, dest_addr)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 565, in _SOCKS5_request
+    resolved = self._write_SOCKS5_address(dst, writer)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 621, in _write_SOCKS5_address
+    socket.AI_ADDRCONFIG)
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\contrib\socks.py", line 88, in _new_conn
+    **extra_kw
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 262, in create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 252, in create_connection
+    sock.connect((remote_host, remote_port))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 100, in wrapper
+    return function(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 855, in connect
+    raise GeneralProxyError("Socket error", error)
+socks.GeneralProxyError: Socket error: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 617, in urlopen
+    chunked=chunked)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 360, in _make_request
+    self._validate_conn(conn)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 857, in _validate_conn
+    super(HTTPSConnectionPool, self)._validate_conn(conn)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 289, in _validate_conn
+    conn.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\contrib\socks.py", line 110, in _new_conn
+    "Failed to establish a new connection: %s" % error
+telegram.vendor.ptb_urllib3.urllib3.exceptions.NewConnectionError: <telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA5499EF0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 203, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 70, in request
+    **urlopen_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 666, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 376, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+telegram.vendor.ptb_urllib3.urllib3.exceptions.MaxRetryError: SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA5499EF0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 319, in _network_loop_retry
+    if not action_cb():
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 280, in polling_action_cb
+    allowed_updates=allowed_updates)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 65, in decorator
+    result = func(self, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 1975, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 309, in post
+    headers={'Content-Type': 'application/json'})
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 209, in _request_wrapper
+    raise NetworkError('urllib3 HTTPError {0}'.format(error))
+telegram.error.NetworkError: urllib3 HTTPError SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA5499EF0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA53065C0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA399E240>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA39795F8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.ext.updater - ERROR - Error while getting Updates: urllib3 HTTPError SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54A9A90>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 851, in connect
+    negotiate(self, dest_addr, dest_port)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 497, in _negotiate_SOCKS5
+    self, CONNECT, dest_addr)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 565, in _SOCKS5_request
+    resolved = self._write_SOCKS5_address(dst, writer)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 621, in _write_SOCKS5_address
+    socket.AI_ADDRCONFIG)
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\contrib\socks.py", line 88, in _new_conn
+    **extra_kw
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 262, in create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 252, in create_connection
+    sock.connect((remote_host, remote_port))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 100, in wrapper
+    return function(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 855, in connect
+    raise GeneralProxyError("Socket error", error)
+socks.GeneralProxyError: Socket error: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 617, in urlopen
+    chunked=chunked)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 360, in _make_request
+    self._validate_conn(conn)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 857, in _validate_conn
+    super(HTTPSConnectionPool, self)._validate_conn(conn)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 289, in _validate_conn
+    conn.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\contrib\socks.py", line 110, in _new_conn
+    "Failed to establish a new connection: %s" % error
+telegram.vendor.ptb_urllib3.urllib3.exceptions.NewConnectionError: <telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54A9A90>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 203, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 70, in request
+    **urlopen_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 666, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 376, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+telegram.vendor.ptb_urllib3.urllib3.exceptions.MaxRetryError: SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54A9A90>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 319, in _network_loop_retry
+    if not action_cb():
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 280, in polling_action_cb
+    allowed_updates=allowed_updates)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 65, in decorator
+    result = func(self, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 1975, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 309, in post
+    headers={'Content-Type': 'application/json'})
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 209, in _request_wrapper
+    raise NetworkError('urllib3 HTTPError {0}'.format(error))
+telegram.error.NetworkError: urllib3 HTTPError SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54A9A90>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54A9B38>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54B5F60>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54B5F98>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA531D908>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.ext.updater - ERROR - Error while getting Updates: urllib3 HTTPError SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA533E1D0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 851, in connect
+    negotiate(self, dest_addr, dest_port)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 497, in _negotiate_SOCKS5
+    self, CONNECT, dest_addr)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 565, in _SOCKS5_request
+    resolved = self._write_SOCKS5_address(dst, writer)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 621, in _write_SOCKS5_address
+    socket.AI_ADDRCONFIG)
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\contrib\socks.py", line 88, in _new_conn
+    **extra_kw
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 262, in create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 252, in create_connection
+    sock.connect((remote_host, remote_port))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 100, in wrapper
+    return function(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 855, in connect
+    raise GeneralProxyError("Socket error", error)
+socks.GeneralProxyError: Socket error: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 617, in urlopen
+    chunked=chunked)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 360, in _make_request
+    self._validate_conn(conn)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 857, in _validate_conn
+    super(HTTPSConnectionPool, self)._validate_conn(conn)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 289, in _validate_conn
+    conn.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\contrib\socks.py", line 110, in _new_conn
+    "Failed to establish a new connection: %s" % error
+telegram.vendor.ptb_urllib3.urllib3.exceptions.NewConnectionError: <telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA533E1D0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 203, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 70, in request
+    **urlopen_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 666, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 376, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+telegram.vendor.ptb_urllib3.urllib3.exceptions.MaxRetryError: SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA533E1D0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 319, in _network_loop_retry
+    if not action_cb():
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 280, in polling_action_cb
+    allowed_updates=allowed_updates)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 65, in decorator
+    result = func(self, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 1975, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 309, in post
+    headers={'Content-Type': 'application/json'})
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 209, in _request_wrapper
+    raise NetworkError('urllib3 HTTPError {0}'.format(error))
+telegram.error.NetworkError: urllib3 HTTPError SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA533E1D0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA5323208>: Failed to establish a new connection: [Errno 11004] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54B5278>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54B59E8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.ext.updater - ERROR - Error while getting Updates: urllib3 HTTPError SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54B5CC0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 851, in connect
+    negotiate(self, dest_addr, dest_port)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 497, in _negotiate_SOCKS5
+    self, CONNECT, dest_addr)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 565, in _SOCKS5_request
+    resolved = self._write_SOCKS5_address(dst, writer)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 621, in _write_SOCKS5_address
+    socket.AI_ADDRCONFIG)
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\contrib\socks.py", line 88, in _new_conn
+    **extra_kw
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 262, in create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 252, in create_connection
+    sock.connect((remote_host, remote_port))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 100, in wrapper
+    return function(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 855, in connect
+    raise GeneralProxyError("Socket error", error)
+socks.GeneralProxyError: Socket error: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 617, in urlopen
+    chunked=chunked)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 360, in _make_request
+    self._validate_conn(conn)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 857, in _validate_conn
+    super(HTTPSConnectionPool, self)._validate_conn(conn)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 289, in _validate_conn
+    conn.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\contrib\socks.py", line 110, in _new_conn
+    "Failed to establish a new connection: %s" % error
+telegram.vendor.ptb_urllib3.urllib3.exceptions.NewConnectionError: <telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54B5CC0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 203, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 70, in request
+    **urlopen_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 666, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 376, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+telegram.vendor.ptb_urllib3.urllib3.exceptions.MaxRetryError: SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54B5CC0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 319, in _network_loop_retry
+    if not action_cb():
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 280, in polling_action_cb
+    allowed_updates=allowed_updates)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 65, in decorator
+    result = func(self, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 1975, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 309, in post
+    headers={'Content-Type': 'application/json'})
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 209, in _request_wrapper
+    raise NetworkError('urllib3 HTTPError {0}'.format(error))
+telegram.error.NetworkError: urllib3 HTTPError SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54B5CC0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA53230B8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA533EDD8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54C3400>: Failed to establish a new connection: [Errno 11004] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54C3A58>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54C3E48>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.ext.updater - ERROR - Error while getting Updates: urllib3 HTTPError SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54CF358>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 851, in connect
+    negotiate(self, dest_addr, dest_port)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 497, in _negotiate_SOCKS5
+    self, CONNECT, dest_addr)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 565, in _SOCKS5_request
+    resolved = self._write_SOCKS5_address(dst, writer)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 621, in _write_SOCKS5_address
+    socket.AI_ADDRCONFIG)
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\contrib\socks.py", line 88, in _new_conn
+    **extra_kw
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 262, in create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 252, in create_connection
+    sock.connect((remote_host, remote_port))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 100, in wrapper
+    return function(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 855, in connect
+    raise GeneralProxyError("Socket error", error)
+socks.GeneralProxyError: Socket error: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 617, in urlopen
+    chunked=chunked)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 360, in _make_request
+    self._validate_conn(conn)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 857, in _validate_conn
+    super(HTTPSConnectionPool, self)._validate_conn(conn)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 289, in _validate_conn
+    conn.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\contrib\socks.py", line 110, in _new_conn
+    "Failed to establish a new connection: %s" % error
+telegram.vendor.ptb_urllib3.urllib3.exceptions.NewConnectionError: <telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54CF358>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 203, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 70, in request
+    **urlopen_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 666, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 376, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+telegram.vendor.ptb_urllib3.urllib3.exceptions.MaxRetryError: SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54CF358>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 319, in _network_loop_retry
+    if not action_cb():
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 280, in polling_action_cb
+    allowed_updates=allowed_updates)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 65, in decorator
+    result = func(self, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 1975, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 309, in post
+    headers={'Content-Type': 'application/json'})
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 209, in _request_wrapper
+    raise NetworkError('urllib3 HTTPError {0}'.format(error))
+telegram.error.NetworkError: urllib3 HTTPError SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54CF358>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54CFBE0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'ConnectTimeoutError(<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnectionPool object at 0x0000026DA39794E0>, 'Connect timed out. (connect timeout=5.0)')': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54CF668>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54CF6A0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54A9860>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.ext.updater - ERROR - Error while getting Updates: urllib3 HTTPError SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54A9160>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 851, in connect
+    negotiate(self, dest_addr, dest_port)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 497, in _negotiate_SOCKS5
+    self, CONNECT, dest_addr)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 565, in _SOCKS5_request
+    resolved = self._write_SOCKS5_address(dst, writer)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 621, in _write_SOCKS5_address
+    socket.AI_ADDRCONFIG)
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\contrib\socks.py", line 88, in _new_conn
+    **extra_kw
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 262, in create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 252, in create_connection
+    sock.connect((remote_host, remote_port))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 100, in wrapper
+    return function(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 855, in connect
+    raise GeneralProxyError("Socket error", error)
+socks.GeneralProxyError: Socket error: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 617, in urlopen
+    chunked=chunked)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 360, in _make_request
+    self._validate_conn(conn)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 857, in _validate_conn
+    super(HTTPSConnectionPool, self)._validate_conn(conn)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 289, in _validate_conn
+    conn.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\contrib\socks.py", line 110, in _new_conn
+    "Failed to establish a new connection: %s" % error
+telegram.vendor.ptb_urllib3.urllib3.exceptions.NewConnectionError: <telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54A9160>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 203, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 70, in request
+    **urlopen_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 666, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 376, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+telegram.vendor.ptb_urllib3.urllib3.exceptions.MaxRetryError: SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54A9160>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 319, in _network_loop_retry
+    if not action_cb():
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 280, in polling_action_cb
+    allowed_updates=allowed_updates)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 65, in decorator
+    result = func(self, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 1975, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 309, in post
+    headers={'Content-Type': 'application/json'})
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 209, in _request_wrapper
+    raise NetworkError('urllib3 HTTPError {0}'.format(error))
+telegram.error.NetworkError: urllib3 HTTPError SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54A9160>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54B51D0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.ext.updater - ERROR - Error while getting Updates: urllib3 HTTPError ('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))
+telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 617, in urlopen
+    chunked=chunked)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 402, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 398, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\ProgramData\Anaconda3\lib\http\client.py", line 1331, in getresponse
+    response.begin()
+  File "C:\ProgramData\Anaconda3\lib\http\client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "C:\ProgramData\Anaconda3\lib\http\client.py", line 258, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 586, in readinto
+    return self._sock.recv_into(b)
+  File "C:\ProgramData\Anaconda3\lib\ssl.py", line 1009, in recv_into
+    return self.read(nbytes, buffer)
+  File "C:\ProgramData\Anaconda3\lib\ssl.py", line 871, in read
+    return self._sslobj.read(len, buffer)
+  File "C:\ProgramData\Anaconda3\lib\ssl.py", line 631, in read
+    v = self._sslobj.read(len, buffer)
+ConnectionResetError: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 203, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 70, in request
+    **urlopen_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 666, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 347, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\packages\six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 617, in urlopen
+    chunked=chunked)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 402, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 398, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\ProgramData\Anaconda3\lib\http\client.py", line 1331, in getresponse
+    response.begin()
+  File "C:\ProgramData\Anaconda3\lib\http\client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "C:\ProgramData\Anaconda3\lib\http\client.py", line 258, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 586, in readinto
+    return self._sock.recv_into(b)
+  File "C:\ProgramData\Anaconda3\lib\ssl.py", line 1009, in recv_into
+    return self.read(nbytes, buffer)
+  File "C:\ProgramData\Anaconda3\lib\ssl.py", line 871, in read
+    return self._sslobj.read(len, buffer)
+  File "C:\ProgramData\Anaconda3\lib\ssl.py", line 631, in read
+    v = self._sslobj.read(len, buffer)
+telegram.vendor.ptb_urllib3.urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 319, in _network_loop_retry
+    if not action_cb():
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 280, in polling_action_cb
+    allowed_updates=allowed_updates)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 65, in decorator
+    result = func(self, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 1975, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 309, in post
+    headers={'Content-Type': 'application/json'})
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 209, in _request_wrapper
+    raise NetworkError('urllib3 HTTPError {0}'.format(error))
+telegram.error.NetworkError: urllib3 HTTPError ('Connection aborted.', ConnectionResetError(10054, 'Удаленный хост принудительно разорвал существующее подключение', None, 10054, None))
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54B5B70>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54C3128>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'ConnectTimeoutError(<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54B5C50>, 'Connection to api.telegram.org timed out. (connect timeout=5.0)')': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA399E8D0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA399E390>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.ext.updater - ERROR - Error while getting Updates: urllib3 HTTPError SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA399EB38>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\contrib\socks.py", line 88, in _new_conn
+    **extra_kw
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 233, in create_connection
+    for r in socket.getaddrinfo(proxy_addr, proxy_port, 0, socket.SOCK_STREAM):
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 617, in urlopen
+    chunked=chunked)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 360, in _make_request
+    self._validate_conn(conn)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 857, in _validate_conn
+    super(HTTPSConnectionPool, self)._validate_conn(conn)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 289, in _validate_conn
+    conn.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\contrib\socks.py", line 120, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+telegram.vendor.ptb_urllib3.urllib3.exceptions.NewConnectionError: <telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA399EB38>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 203, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 70, in request
+    **urlopen_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 666, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 376, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+telegram.vendor.ptb_urllib3.urllib3.exceptions.MaxRetryError: SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA399EB38>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 319, in _network_loop_retry
+    if not action_cb():
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 280, in polling_action_cb
+    allowed_updates=allowed_updates)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 65, in decorator
+    result = func(self, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 1975, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 309, in post
+    headers={'Content-Type': 'application/json'})
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 209, in _request_wrapper
+    raise NetworkError('urllib3 HTTPError {0}'.format(error))
+telegram.error.NetworkError: urllib3 HTTPError SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA399EB38>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA531DBA8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA531D278>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA531D518>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.ext.updater - ERROR - Error while getting Updates: urllib3 HTTPError SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54C3470>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\contrib\socks.py", line 88, in _new_conn
+    **extra_kw
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 233, in create_connection
+    for r in socket.getaddrinfo(proxy_addr, proxy_port, 0, socket.SOCK_STREAM):
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 617, in urlopen
+    chunked=chunked)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 360, in _make_request
+    self._validate_conn(conn)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 857, in _validate_conn
+    super(HTTPSConnectionPool, self)._validate_conn(conn)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 289, in _validate_conn
+    conn.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\contrib\socks.py", line 120, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+telegram.vendor.ptb_urllib3.urllib3.exceptions.NewConnectionError: <telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54C3470>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 203, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 70, in request
+    **urlopen_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 666, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 376, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+telegram.vendor.ptb_urllib3.urllib3.exceptions.MaxRetryError: SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54C3470>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 319, in _network_loop_retry
+    if not action_cb():
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 280, in polling_action_cb
+    allowed_updates=allowed_updates)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 65, in decorator
+    result = func(self, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 1975, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 309, in post
+    headers={'Content-Type': 'application/json'})
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 209, in _request_wrapper
+    raise NetworkError('urllib3 HTTPError {0}'.format(error))
+telegram.error.NetworkError: urllib3 HTTPError SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54C3470>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54C3668>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54C3080>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.vendor.ptb_urllib3.urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None)) after connection broken by 'NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54C3B38>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',)': /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates
+telegram.ext.updater - ERROR - Error while getting Updates: urllib3 HTTPError SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54C3208>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\contrib\socks.py", line 88, in _new_conn
+    **extra_kw
+  File "C:\ProgramData\Anaconda3\lib\site-packages\socks.py", line 233, in create_connection
+    for r in socket.getaddrinfo(proxy_addr, proxy_port, 0, socket.SOCK_STREAM):
+  File "C:\ProgramData\Anaconda3\lib\socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 617, in urlopen
+    chunked=chunked)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 360, in _make_request
+    self._validate_conn(conn)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 857, in _validate_conn
+    super(HTTPSConnectionPool, self)._validate_conn(conn)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 289, in _validate_conn
+    conn.connect()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\contrib\socks.py", line 120, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+telegram.vendor.ptb_urllib3.urllib3.exceptions.NewConnectionError: <telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54C3208>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 203, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 70, in request
+    **urlopen_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 695, in urlopen
+    **response_kw)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\connectionpool.py", line 666, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\vendor\ptb_urllib3\urllib3\util\retry.py", line 376, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+telegram.vendor.ptb_urllib3.urllib3.exceptions.MaxRetryError: SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54C3208>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 319, in _network_loop_retry
+    if not action_cb():
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\ext\updater.py", line 280, in polling_action_cb
+    allowed_updates=allowed_updates)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 65, in decorator
+    result = func(self, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\bot.py", line 1975, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 309, in post
+    headers={'Content-Type': 'application/json'})
+  File "C:\ProgramData\Anaconda3\lib\site-packages\telegram\utils\request.py", line 209, in _request_wrapper
+    raise NetworkError('urllib3 HTTPError {0}'.format(error))
+telegram.error.NetworkError: urllib3 HTTPError SOCKSHTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot680054213:AAHeH-vnxOnlV23ApUjjtruROxv0B-0DSfA/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x0000026DA54C3208>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed',))

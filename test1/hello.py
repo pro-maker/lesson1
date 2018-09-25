@@ -1,0 +1,2 @@
+name = 'vitaly'
+print (name)
