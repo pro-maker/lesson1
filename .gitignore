@@ -1,2 +1,3 @@
-*.pyc
-bot.log
+*.log
+settings.py
+password.txt
