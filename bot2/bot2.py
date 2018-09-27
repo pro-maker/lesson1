@@ -1,11 +1,7 @@
 # Импорт компонент
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
-
-
-# Настройки прокси
-PROXY = {'proxy_url': 'socks5://t1.learn.python.ru:1080',
-    'urllib3_proxy_kwargs': {'username': 'learn', 'password': 'python'}}
+import settings
 
 
 logging.basicConfig(
@@ -41,7 +37,7 @@ def talk_to_me(bot, update):
 
 
 def main():
-	mybot = Updater("501304893:AAEB4vN6wnsMJ4xOs0MpsU2zCe3gYT9dCV8", request_kwargs=PROXY)
+	mybot = Updater(settings.API_KEY, request_kwargs=settings.PROXY)
 
 	# logging.info('Бот запускается')
 	logging.info('BotStart')
